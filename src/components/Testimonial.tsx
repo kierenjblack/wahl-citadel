@@ -104,6 +104,7 @@ export default function Testimonial() {
           >
             {testimonials.map((_, i) => (
               <button
+                type="button"
                 key={i}
                 onClick={() => goTo(i)}
                 aria-label={`Go to review ${i + 1}`}
@@ -229,6 +230,7 @@ export default function Testimonial() {
             const disabled = dir === -1 ? current === 0 : current === count - 1;
             return (
               <button
+                type="button"
                 key={dir}
                 onClick={() => goTo(current + dir)}
                 disabled={disabled}

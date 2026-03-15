@@ -73,15 +73,7 @@ export default function Funds() {
           Funds
         </motion.h2>
 
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "1fr 1fr",
-            gap: "1px",
-            backgroundColor: "rgba(255,254,242,0.08)",
-          }}
-          className="grid-cols-1 md:grid-cols-2"
-        >
+        <div className="grid-funds">
           {funds.map((fund, i) => (
             <motion.div
               key={fund.name}
