@@ -5,19 +5,29 @@ import { useRef } from "react";
 
 const pillars = [
   {
-    title: "Strategy",
+    title: "Rare Opportunities Lead to Extraordinary Outcomes",
     description:
-      "We approach every investment with a disciplined framework — identifying asymmetric opportunities where capital, expertise, and timing converge. Our team's extensive network enables us to empower businesses to secure the funding they need.",
+      "We sift through as many opportunities as necessary to secure rare opportunities with asymmetric risk/reward. Well-managed risk enables exceptional returns.",
   },
   {
-    title: "Experience",
+    title: "Success is Engineered",
     description:
-      "With decades of combined experience across technology, law, asset management, and industrial leadership, Wahl Citadel has developed a pattern recognition that few firms can match. We have been on the operator side — giving us the full picture.",
+      "Exceptional returns don't happen by chance; they are the result of strategy, expertise, and relentless execution.",
   },
   {
-    title: "Knowledge",
+    title: "Smart Risk. Big Rewards.",
     description:
-      "We offer four distinct funds, each representing an element of nature and tailored to specific investment objectives. This lets us apply the right capital instrument to each opportunity without compromise.",
+      "Bold decisions create the greatest wealth. We take calculated risks — reckless risk is prohibited. Precision over speculation, always.",
+  },
+  {
+    title: "Performance is the Currency of Trust",
+    description:
+      "Trust is earned deal-by-deal and return-by-return. Our founding partners invest first and exit last — full alignment from day one.",
+  },
+  {
+    title: "Investors' Interests Aligned",
+    description:
+      "Investors' success is Wahl Citadel's success. Our returns are aligned with the returns to our investors and all other stakeholders.",
   },
 ];
 
@@ -50,7 +60,7 @@ export default function AboutFull() {
               transition={{ duration: 0.7 }}
               style={{ color: "#fffef2", opacity: 0.75, fontWeight: 300, fontSize: "1rem", lineHeight: 1.8, margin: 0 }}
             >
-              We are not passive capital. We bring legal, financial, operational, and technological expertise directly to every investment — working alongside management teams as genuine partners in the growth of their business.
+              The founders of Wahl Citadel came together to develop and offer a new class of investing. Precision Equity was born — and with it, a set of core principles to guide strategy, ensure capital precision, and transform ambition into wealth.
             </motion.p>
 
             <motion.div
@@ -60,10 +70,10 @@ export default function AboutFull() {
               style={{ display: "flex", flexDirection: "column", gap: "20px" }}
             >
               <p style={{ color: "#fffef2", opacity: 0.75, fontWeight: 300, fontSize: "1rem", lineHeight: 1.8, margin: 0 }}>
-                Our four elemental funds — Fire, Wind, Earth, and Water — are each structured around a distinct mandate, ensuring the character of the capital matches the character of the opportunity.
+                Our purpose: turn ambition into wealth by transforming rare opportunities into exceptional returns.
               </p>
               <p style={{ color: "#fffef2", opacity: 0.75, fontWeight: 300, fontSize: "1rem", lineHeight: 1.8, margin: 0 }}>
-                Based at Level 30, Rialto Building, we operate from the heart of Melbourne&apos;s financial district with a national mandate and a long-term view.
+                Based at Level 30, Rialto Building, we operate from the heart of Melbourne&apos;s financial district — a different way to invest.
               </p>
             </motion.div>
           </div>
@@ -71,7 +81,7 @@ export default function AboutFull() {
           {/* Divider */}
           <div style={{ height: "1px", backgroundColor: "rgba(255,254,242,0.08)", marginBottom: "56px" }} />
 
-          {/* 3 pillars */}
+          {/* 5 founding principles */}
           <div className="grid-3col">
             {pillars.map((p, i) => (
               <motion.div
@@ -129,14 +139,14 @@ export default function AboutFull() {
               Our philosophy
             </p>
             <h2 style={{ fontFamily: "var(--font-season)", fontSize: "clamp(1.8rem, 3.5vw, 42px)", color: "#292929", lineHeight: 1.1, letterSpacing: "-0.01em", marginBottom: "28px" }}>
-              Patient capital. Meaningful returns.
+              Precision Equity — a new class of investing.
             </h2>
             <div style={{ display: "flex", flexDirection: "column", gap: "20px", maxWidth: "640px" }}>
               <p style={{ color: "#292929", opacity: 0.75, fontWeight: 300, fontSize: "1rem", lineHeight: 1.75, margin: 0 }}>
-                We believe the best investment outcomes come from deep alignment between the capital provider and the business operator. That is why we structure every engagement with clarity on roles, expectations, and exit horizons before a single dollar is deployed.
+                Smart risk. Big rewards. A different way to invest. Welcome to Precision Equity — where we transform rare opportunities into exceptional returns through strategy, expertise, and relentless execution.
               </p>
               <p style={{ color: "#292929", opacity: 0.75, fontWeight: 300, fontSize: "1rem", lineHeight: 1.75, margin: 0 }}>
-                We are disciplined about sectors where we have genuine insight — technology, mining and resources, healthcare roll-ups, and dynamic growth businesses. Within these sectors, our co-founders have built, managed, listed, and exited companies. That operating experience is what differentiates us.
+                Whether you are looking to invest or seeking growth capital, Wahl Citadel brings the alignment, discipline, and network to make it happen.
               </p>
             </div>
           </motion.div>

@@ -13,8 +13,8 @@ export default function AboutPage() {
     <main>
       <PageHero
         eyebrow="About Wahl Citadel"
-        heading="Where Capital Meets Conviction"
-        subtext="We are a Melbourne-based private equity and growth funding firm operating at the intersection of strategic capital allocation and deep sector expertise. Since our founding, we have partnered with founders and executives who refuse to settle for ordinary outcomes."
+        heading="Turn Ambition Into Wealth"
+        subtext="The founders of Wahl Citadel came together to develop and offer a new class of investing — Precision Equity. Transforming rare opportunities into exceptional returns through strategy, expertise, and relentless execution."
       />
       <AboutFull />
       <ProcessFull />
