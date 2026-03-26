@@ -10,11 +10,20 @@
   font-display: swap;
 }
 
+@theme {
+  --color-dark: #292929;
+  --color-dark-deep: #1e1e1e;
+  --color-gold: #fcb835;
+  --color-cream: #fffef2;
+  --color-cream-secondary: #f2f1ec;
+  --font-family-season: "SeasonSerif", Georgia, serif;
+}
+
+@utility font-season {
+  font-family: "SeasonSerif", Georgia, serif;
+}
+
 :root {
-  --dark: #292929;
-  --gold: #fcb835;
-  --cream: #fffef2;
-  --cream-secondary: #f2f1ec;
   --font-season: "SeasonSerif", Georgia, serif;
   --font-public-sans: "Public Sans", sans-serif;
 }
@@ -39,8 +48,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-h1, h2, h3, h4, h5, h6, p, figure {
-  margin: 0;
+@layer base {
+  h1, h2, h3, h4, h5, h6, p, figure {
+    margin: 0;
+  }
 }
 
 /* ─── Material Symbols utility ──────────────────────────────────────────── */
@@ -61,6 +72,7 @@ h1, h2, h3, h4, h5, h6, p, figure {
 }
 
 /* ─── Base button reset ──────────────────────────────────────────────────── */
+@layer components {
 .btn {
   display: inline-flex;
   align-items: center;
@@ -87,10 +99,11 @@ h1, h2, h3, h4, h5, h6, p, figure {
 .btn-primary {
   background-color: #fcb835;
   color: #292929;
+  box-shadow: none;
 }
 .btn-primary:hover {
   background-color: #f5b030;
-  box-shadow: 0 4px 20px rgba(252,184,53,0.4);
+  box-shadow: none;
 }
 .btn-primary:active {
   background-color: #e8a424;
@@ -222,6 +235,7 @@ h1, h2, h3, h4, h5, h6, p, figure {
 .btn-icon-light:active {
   background-color: rgba(255,254,242,0.14);
 }
+} /* end @layer components */
 
 /* Nav link hover — gold sliding underline */
 .nav-link {
@@ -524,4 +538,19 @@ h1, h2, h3, h4, h5, h6, p, figure {
 #contact input:focus,
 #contact textarea:focus {
   border-color: #fcb835 !important;
+}
+
+/* Floating logo animations */
+@keyframes drift {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  25%      { transform: translate(-12px, -18px) rotate(2deg); }
+  50%      { transform: translate(6px, -28px) rotate(-1deg); }
+  75%      { transform: translate(-8px, -10px) rotate(1.5deg); }
+}
+
+@keyframes drift-reverse {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  25%      { transform: translate(16px, 12px) rotate(-2deg); }
+  50%      { transform: translate(-8px, 20px) rotate(1.5deg); }
+  75%      { transform: translate(10px, 6px) rotate(-1deg); }
 }

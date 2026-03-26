@@ -1,3 +1,7 @@
+"use client";
+
+import { motion } from "framer-motion";
+
 interface PageHeroProps {
   eyebrow: string;
   heading: string;
@@ -6,32 +10,32 @@ interface PageHeroProps {
 
 export default function PageHero({ eyebrow, heading, subtext }: PageHeroProps) {
   return (
-    <section style={{ backgroundColor: "#292929", paddingTop: "144px", paddingBottom: "80px" }}>
-      <div style={{ maxWidth: "1152px", margin: "0 auto", padding: "0 40px" }}>
-        <p style={{ color: "#fcb835", fontSize: "0.75rem", fontWeight: 500, letterSpacing: "0.12em", textTransform: "uppercase", marginBottom: "16px" }}>
+    <section className="bg-dark pt-32 pb-24">
+      <div className="mx-auto max-w-[1152px] px-5 md:px-10">
+        <motion.p
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="text-gold text-xs font-medium tracking-[0.12em] uppercase mb-4"
+        >
           {eyebrow}
-        </p>
-        <h1 style={{
-          fontFamily: "var(--font-season)",
-          fontSize: "clamp(2.5rem, 5vw, 64px)",
-          color: "#fffef2",
-          lineHeight: 1.05,
-          letterSpacing: "-0.02em",
-          marginBottom: "24px",
-          maxWidth: "760px",
-        }}>
+        </motion.p>
+        <motion.h1
+          initial={{ opacity: 0, y: 28 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.2 }}
+          className="font-season text-[clamp(2.5rem,5vw,64px)] text-cream leading-[1.05] tracking-[-0.02em] mb-6 max-w-[760px]"
+        >
           {heading}
-        </h1>
-        <p style={{
-          color: "#fffef2",
-          opacity: 0.6,
-          fontWeight: 300,
-          fontSize: "1rem",
-          lineHeight: 1.75,
-          maxWidth: "600px",
-        }}>
+        </motion.h1>
+        <motion.p
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.35 }}
+          className="text-cream/60 font-light text-base leading-[1.75] max-w-[600px]"
+        >
           {subtext}
-        </p>
+        </motion.p>
       </div>
     </section>
   );

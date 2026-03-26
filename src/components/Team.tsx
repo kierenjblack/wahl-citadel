@@ -71,21 +71,14 @@ export default function Team() {
     <section
       id="team"
       ref={ref}
-      style={{ backgroundColor: "#f2f1ec", padding: "96px 0" }}
+      className="bg-cream-secondary py-24"
     >
-      <div style={{ maxWidth: "1152px", margin: "0 auto", padding: "0 40px" }}>
+      <div className="mx-auto max-w-[1152px] px-5 md:px-10">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7 }}
-          style={{
-            fontFamily: "var(--font-season)",
-            fontSize: "clamp(2rem, 4vw, 52px)",
-            color: "#292929",
-            lineHeight: 1.1,
-            letterSpacing: "-0.01em",
-            marginBottom: "64px",
-          }}
+          className="font-season text-[clamp(2rem,4vw,52px)] text-dark leading-[1.1] tracking-[-0.01em] mb-16"
         >
           Our team
         </motion.h2>
@@ -97,44 +90,44 @@ export default function Team() {
               initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.1 + i * 0.1 }}
-              style={{ transformStyle: "preserve-3d" }}
+              className="[transform-style:preserve-3d]"
             >
               <div
-                className={`team-card-wrap${flipped[i] ? " flipped" : ""}`}
-                style={{ aspectRatio: "3 / 4" }}
+                className={`team-card-wrap${flipped[i] ? " flipped" : ""} aspect-[3/4]`}
                 onClick={() => toggleFlip(i)}
               >
                 <div className="team-card-inner">
 
-                  {/* Front — photo only */}
+                  {/* Front -- photo only */}
                   <div className="team-card-front">
                     <Image
                       src={member.photo}
                       alt={member.name}
                       fill
-                      style={{ objectFit: "cover", objectPosition: member.objectPosition ?? "top center", filter: "grayscale(100%)", transform: member.photoScale ? `scale(${member.photoScale})` : undefined }}
+                      className="object-cover grayscale"
+                      style={{ objectPosition: member.objectPosition ?? "top center", transform: member.photoScale ? `scale(${member.photoScale})` : undefined }}
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                     />
                     <div className="team-card-hint">
-                      <span className="icon" style={{ fontSize: "14px" }}>touch_app</span>
+                      <span className="icon text-sm">touch_app</span>
                       Tap to learn more
                     </div>
                   </div>
 
-                  {/* Back — info */}
+                  {/* Back -- info */}
                   <div className="team-card-back">
-                    <p style={{ fontFamily: "var(--font-season)", fontSize: "1rem", color: "#292929", marginBottom: "2px", fontWeight: 400 }}>
+                    <p className="font-season text-base text-dark mb-0.5 font-normal">
                       {member.name}
                     </p>
-                    <p style={{ color: "#fcb835", fontSize: "0.75rem", fontWeight: 500, marginBottom: "16px" }}>
+                    <p className="text-gold text-xs font-medium mb-4">
                       {member.title}
                     </p>
 
-                    <ul style={{ listStyle: "none", padding: 0, margin: "0 0 auto 0", display: "flex", flexDirection: "column", gap: "8px" }}>
+                    <ul className="list-none p-0 mt-0 mx-0 mb-auto flex flex-col gap-2">
                       {member.points.map((point, j) => (
-                        <li key={j} style={{ display: "flex", gap: "8px", alignItems: "flex-start" }}>
-                          <span style={{ width: "4px", height: "4px", borderRadius: "50%", backgroundColor: "#fcb835", flexShrink: 0, marginTop: "7px" }} />
-                          <span style={{ color: "#292929", opacity: 0.65, fontSize: "0.75rem", fontWeight: 300, lineHeight: 1.5 }}>
+                        <li key={j} className="flex gap-2 items-start">
+                          <span className="size-1 rounded-full bg-gold shrink-0 mt-[7px]" />
+                          <span className="text-dark/65 text-xs font-light leading-normal">
                             {point}
                           </span>
                         </li>
@@ -145,7 +138,7 @@ export default function Team() {
                       href={member.linkedin}
                       target="_blank"
                       rel="noopener noreferrer"
-                      style={{ display: "flex", alignItems: "center", gap: "6px", color: "#292929", fontSize: "0.75rem", fontWeight: 500, textDecoration: "none", opacity: 0.7, marginTop: "16px" }}
+                      className="flex items-center gap-1.5 text-dark text-xs font-medium no-underline opacity-70 mt-4"
                     >
                       <LinkedInIcon />
                       LinkedIn

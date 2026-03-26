@@ -31,34 +31,32 @@ const cols = [
 
 export default function Footer() {
   return (
-    <footer style={{ backgroundColor: "#1e1e1e", overflow: "hidden" }}>
+    <footer className="overflow-hidden bg-dark-deep">
 
-      <div style={{ maxWidth: "1152px", margin: "0 auto", padding: "72px 40px 56px" }}>
+      <div className="mx-auto max-w-[1152px] px-5 md:px-10 pt-[72px] pb-14">
         <div className="grid-footer">
 
           {/* Left: contact info + social icons */}
           <div>
-            <div style={{ display: "flex", gap: "10px", marginBottom: "32px" }}>
+            <div className="mb-8 flex gap-2.5">
               <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"
                 className="btn-icon btn-icon-light" aria-label="LinkedIn">
-                <span className="icon" style={{ fontSize: "18px" }}>link</span>
+                <span className="icon text-[18px]">link</span>
               </a>
               <a href="mailto:info@wahlcitadel.com"
                 className="btn-icon btn-icon-light" aria-label="Email">
-                <span className="icon" style={{ fontSize: "18px" }}>mail</span>
+                <span className="icon text-[18px]">mail</span>
               </a>
             </div>
-            <p style={{ color: "#fffef2", opacity: 0.45, fontSize: "0.8rem", fontWeight: 300, lineHeight: 1.7, marginBottom: "16px" }}>
+            <p className="mb-4 text-[0.8rem] font-light leading-[1.7] text-cream opacity-45">
               Level 30, South Tower<br />Rialto Building<br />525 Collins Street<br />Melbourne VIC 3000
             </p>
             <a href="mailto:info@wahlcitadel.com"
-              className="footer-link"
-              style={{ display: "block", color: "#fffef2", opacity: 0.45, fontSize: "0.8rem", fontWeight: 300, marginBottom: "6px" }}>
+              className="footer-link mb-1.5 block text-[0.8rem] font-light text-cream opacity-45">
               info@wahlcitadel.com
             </a>
             <a href="tel:+61000000000"
-              className="footer-link"
-              style={{ display: "block", color: "#fffef2", opacity: 0.45, fontSize: "0.8rem", fontWeight: 300 }}>
+              className="footer-link block text-[0.8rem] font-light text-cream opacity-45">
               (+61) 000 000 000
             </a>
           </div>
@@ -66,15 +64,14 @@ export default function Footer() {
           {/* Nav columns */}
           {cols.map((col) => (
             <div key={col.heading}>
-              <p style={{ color: "#fffef2", opacity: 0.2, fontSize: "0.62rem", fontWeight: 600, letterSpacing: "0.14em", textTransform: "uppercase", marginBottom: "20px" }}>
+              <p className="mb-5 text-[0.62rem] font-semibold uppercase tracking-[0.14em] text-cream opacity-20">
                 {col.heading}
               </p>
-              <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "12px" }}>
+              <ul className="m-0 flex list-none flex-col gap-3 p-0">
                 {col.links.map((l) => (
                   <li key={l.label}>
                     <Link href={l.href}
-                      className="footer-link"
-                      style={{ color: "#fffef2", opacity: 0.55, fontSize: "0.875rem", fontWeight: 300 }}>
+                      className="footer-link text-sm font-light text-cream opacity-55">
                       {l.label}
                     </Link>
                   </li>
@@ -86,31 +83,28 @@ export default function Footer() {
       </div>
 
       {/* Divider + CTA */}
-      <div style={{ maxWidth: "1152px", margin: "0 auto", padding: "0 40px" }}>
-        <div style={{ display: "flex", alignItems: "center", gap: "24px" }}>
-          <div style={{ flex: 1, height: "1px", backgroundColor: "rgba(255,254,242,0.08)" }} />
-          <Link href="/contact" className="btn btn-cream"
-            style={{ padding: "9px 24px", fontSize: "0.8rem" }}>
+      <div className="mx-auto max-w-[1152px] px-5 md:px-10">
+        <div className="flex items-center gap-6">
+          <div className="h-px flex-1 bg-cream/[0.08]" />
+          <Link href="/contact" className="btn btn-cream px-6 py-[9px] text-[0.8rem]">
             Get Started
           </Link>
         </div>
       </div>
 
       {/* Bottom bar */}
-      <div style={{ maxWidth: "1152px", margin: "0 auto", padding: "20px 40px 24px" }}>
-        <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: "12px" }}>
-          <p style={{ color: "#fffef2", opacity: 0.2, fontSize: "0.72rem", fontWeight: 300, margin: 0 }}>
-            © {new Date().getFullYear()} Wahl Citadel Pty Ltd. All rights reserved.
+      <div className="mx-auto max-w-[1152px] px-5 md:px-10 pt-5 pb-6">
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <p className="m-0 text-[0.72rem] font-light text-cream opacity-20">
+            &copy; {new Date().getFullYear()} Wahl Citadel Pty Ltd. All rights reserved.
           </p>
-          <div style={{ display: "flex", gap: "32px" }}>
+          <div className="flex gap-8">
             <a href="mailto:info@wahlcitadel.com?subject=Terms and Conditions"
-              className="footer-link"
-              style={{ color: "#fffef2", opacity: 0.2, fontSize: "0.62rem", fontWeight: 600, letterSpacing: "0.1em", textTransform: "uppercase" }}>
+              className="footer-link text-[0.62rem] font-semibold uppercase tracking-[0.1em] text-cream opacity-20">
               Terms &amp; Conditions
             </a>
             <a href="mailto:info@wahlcitadel.com?subject=Privacy Policy"
-              className="footer-link"
-              style={{ color: "#fffef2", opacity: 0.2, fontSize: "0.62rem", fontWeight: 600, letterSpacing: "0.1em", textTransform: "uppercase" }}>
+              className="footer-link text-[0.62rem] font-semibold uppercase tracking-[0.1em] text-cream opacity-20">
               Privacy Policy
             </a>
           </div>
@@ -118,8 +112,8 @@ export default function Footer() {
       </div>
 
       {/* Oversized brand */}
-      <div style={{ overflow: "hidden", lineHeight: 0.85, userSelect: "none", pointerEvents: "none" }}>
-        <p style={{ fontFamily: "var(--font-season)", fontSize: "clamp(80px, 16vw, 220px)", color: "rgba(255,254,242,0.04)", margin: 0, padding: "0 24px", whiteSpace: "nowrap", letterSpacing: "-0.03em" }}>
+      <div className="overflow-hidden leading-[0.85] select-none pointer-events-none">
+        <p className="m-0 whitespace-nowrap px-6 font-season tracking-[-0.03em]" style={{ fontSize: "clamp(80px, 16vw, 220px)", color: "rgba(255,254,242,0.04)" }}>
           Wahl Citadel.
         </p>
       </div>

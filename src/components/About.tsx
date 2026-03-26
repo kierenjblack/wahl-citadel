@@ -29,23 +29,17 @@ export default function About() {
     <section
       id="about"
       ref={ref}
-      style={{ backgroundColor: "#292929", padding: "96px 0" }}
+      className="bg-dark py-24"
     >
-      <div style={{ maxWidth: "1152px", margin: "0 auto", padding: "0 40px" }}>
+      <div className="mx-auto max-w-[1152px] px-5 md:px-10">
         {/* Heading + text columns */}
-        <div className="grid-2col" style={{ marginBottom: "80px" }}>
+        <div className="grid-2col mb-20">
           <motion.h2
             initial={{ opacity: 0, y: 24 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7 }}
-            style={{
-              fontFamily: "var(--font-season)",
-              fontSize: "clamp(2rem, 4vw, 52px)",
-              color: "#fffef2",
-              lineHeight: 1.1,
-              letterSpacing: "-0.01em",
-              margin: 0,
-            }}
+            className="font-season text-cream leading-[1.1] tracking-tight"
+            style={{ fontSize: "clamp(2rem, 4vw, 52px)" }}
           >
             Who is Wahl Citadel?
           </motion.h2>
@@ -54,14 +48,14 @@ export default function About() {
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7, delay: 0.15 }}
-            style={{ display: "flex", flexDirection: "column", gap: "24px" }}
+            className="flex flex-col gap-6"
           >
-            <p style={{ color: "#fffef2", opacity: 0.75, fontWeight: 300, fontSize: "1rem", lineHeight: 1.7, margin: 0 }}>
+            <p className="text-cream/75 font-light text-base leading-[1.7]">
               Wahl Citadel is renowned for attracting investments and fostering
               financial growth, making us the ideal destination for businesses
               looking to expand.
             </p>
-            <p style={{ color: "#fffef2", opacity: 0.75, fontWeight: 300, fontSize: "1rem", lineHeight: 1.7, margin: 0 }}>
+            <p className="text-cream/75 font-light text-base leading-[1.7]">
               We offer four distinct funds, each representing elements of nature
               and tailored to specific investment objectives, showcasing our
               commitment to providing diverse and optimal financial growth options.
@@ -70,7 +64,7 @@ export default function About() {
         </div>
 
         {/* Divider */}
-        <div style={{ height: "1px", backgroundColor: "rgba(255,254,242,0.08)", marginBottom: "64px" }} />
+        <div className="mb-16 h-px bg-cream/[0.08]" />
 
         {/* 3 pillars */}
         <div className="grid-3col">
@@ -81,26 +75,11 @@ export default function About() {
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.25 + i * 0.1 }}
             >
-              <div
-                style={{
-                  width: "32px",
-                  height: "2px",
-                  backgroundColor: "#fcb835",
-                  marginBottom: "20px",
-                }}
-              />
-              <h3
-                style={{
-                  fontFamily: "var(--font-season)",
-                  fontSize: "1.25rem",
-                  color: "#fffef2",
-                  marginBottom: "12px",
-                  fontWeight: 400,
-                }}
-              >
+              <div className="mb-5 h-0.5 w-8 bg-gold" />
+              <h3 className="mb-3 font-season text-xl font-normal text-cream">
                 {p.title}
               </h3>
-              <p style={{ color: "#fffef2", opacity: 0.6, fontWeight: 300, fontSize: "0.875rem", lineHeight: 1.7, margin: 0 }}>
+              <p className="text-cream/60 text-sm font-light leading-[1.7]">
                 {p.description}
               </p>
             </motion.div>

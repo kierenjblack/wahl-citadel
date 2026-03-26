@@ -123,34 +123,17 @@ export default function Hero() {
     <section
       id="hero-section"
       ref={sectionRef}
-      style={{
-        position: "relative",
-        minHeight: "100vh",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
-        overflow: "hidden",
-        backgroundColor: "#fffef2",
-        cursor: "default",
-      }}
+      className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-cream cursor-default"
     >
       {/* ─── Bar graph ─────────────────────────────────────────────────── */}
       <div
         aria-hidden
+        className="absolute bottom-0 left-0 right-0 flex items-end pointer-events-none z-0"
         style={{
-          position: "absolute",
-          bottom: 0,
-          left: 0,
-          right: 0,
           height: mobile ? "45%" : "100%",
           top: mobile ? "auto" : 0,
-          display: "flex",
-          alignItems: "flex-end",
           gap: mobile ? "5px" : "3px",
           padding: mobile ? "0 5px" : "0 3px",
-          pointerEvents: "none",
-          zIndex: 0,
           WebkitMaskImage: "linear-gradient(to top, black 0%, black 40%, transparent 72%)",
           maskImage: "linear-gradient(to top, black 0%, black 40%, transparent 72%)",
         }}
@@ -180,27 +163,13 @@ export default function Hero() {
       </div>
 
       {/* ─── Hero content ──────────────────────────────────────────────── */}
-      <div
-        style={{
-          position: "relative",
-          zIndex: 10,
-          maxWidth: "860px",
-          textAlign: "center",
-          padding: "0 24px",
-        }}
-      >
+      <div className="relative z-10 flex w-full flex-col items-center px-6 text-center">
         <motion.h1
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-          style={{
-            fontFamily: "var(--font-season)",
-            fontSize: "clamp(3.2rem, 8vw, 96px)",
-            color: "#292929",
-            lineHeight: 1.0,
-            letterSpacing: "-0.02em",
-            marginBottom: "2rem",
-          }}
+          className="font-season text-dark leading-none tracking-tight mb-10 max-w-[860px]"
+          style={{ fontSize: "clamp(3.2rem, 8vw, 96px)" }}
         >
           Enhance Your Returns
         </motion.h1>
@@ -209,16 +178,8 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.25, ease: "easeOut" }}
-          style={{
-            color: "#292929",
-            opacity: 0.65,
-            fontFamily: "var(--font-public-sans)",
-            fontSize: "1rem",
-            fontWeight: 300,
-            lineHeight: 1.7,
-            maxWidth: "520px",
-            margin: "0 auto 2.5rem",
-          }}
+          className="text-dark/65 font-light text-base leading-relaxed max-w-[520px] mb-12"
+          style={{ fontFamily: "var(--font-public-sans)" }}
         >
           Welcome to Wahl Citadel, where financial possibilities meet a proven
           track record. Our expert team and extensive network empower businesses
@@ -229,7 +190,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.45, ease: "easeOut" }}
-          style={{ display: "flex", gap: "12px", justifyContent: "center", flexWrap: "wrap" }}
+          className="flex gap-3 justify-center flex-wrap"
         >
           <a href="/funds" className="btn btn-dark">Explore Our Funds</a>
           <a href="/contact" className="btn btn-outline">Raise Growth Capital</a>

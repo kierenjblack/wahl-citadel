@@ -10,7 +10,7 @@ const funds = [
     thesis:
       "Ignite your investments with the Fire Fund, where innovation meets cutting-edge technology. Fueled by high-tech opportunities and a passion for transformative growth, this fund sparks the future.",
     strategy:
-      "The Fire Fund invests in groundbreaking tech companies and disruptive startups — from SaaS platforms to deep-tech ventures — illuminating the future with today's innovations. We target businesses with strong IP, recurring revenue models, and clear paths to scale.",
+      "The Fire Fund invests in groundbreaking tech companies and disruptive startups, from SaaS platforms to deep-tech ventures, illuminating the future with today's innovations. We target businesses with strong IP, recurring revenue models, and clear paths to scale.",
     focus: ["Enterprise Software", "Health Technology", "Deep Tech", "Digital Platforms"],
   },
   {
@@ -19,7 +19,7 @@ const funds = [
     thesis:
       "Influential and adaptive, the Wind Fund is grounded in stability and flowing with liquidity. Embrace the dynamic spirit, navigating the landscape with agility and adaptability across fast-moving sectors.",
     strategy:
-      "Our Wind Fund embraces the dynamic nature of growth industries, capturing the energy of innovation and adapting swiftly to market dynamics. We focus on businesses in transition — those repositioning for scale, executing acquisitions, or entering new markets.",
+      "Our Wind Fund embraces the dynamic nature of growth industries, capturing the energy of innovation and adapting swiftly to market dynamics. We focus on businesses in transition, those repositioning for scale, executing acquisitions, or entering new markets.",
     focus: ["Growth Businesses", "Market Expansion", "Strategic Acquisitions", "Sector Transitions"],
   },
   {
@@ -28,14 +28,14 @@ const funds = [
     thesis:
       "Explore prosperity with our Earth Fund. Rooted in mining and resources, it offers a stable foundation for long-term growth and resilient investments in real assets with enduring value.",
     strategy:
-      "The Earth Fund focuses on industry bedrock — especially mining, resources, and industrial businesses. Our investments, like ore, yield enduring value when carefully refined. We back management teams with proven track records in resource extraction and development.",
+      "The Earth Fund focuses on industry bedrock, especially mining, resources, and industrial businesses. Our investments, like ore, yield enduring value when carefully refined. We back management teams with proven track records in resource extraction and development.",
     focus: ["Mining & Exploration", "Critical Minerals", "Industrial Operations", "Resource Development"],
   },
   {
     name: "Water Fund",
     tag: "Liquidity · Adaptability",
     thesis:
-      "Flow with opportunity in the Water Fund. Navigating the dynamic financial landscape, it offers liquidity and adaptability — designed to move fluidly across opportunity sets without sacrificing discipline.",
+      "Flow with opportunity in the Water Fund. Navigating the dynamic financial landscape, it offers liquidity and adaptability, designed to move fluidly across opportunity sets without sacrificing discipline.",
     strategy:
       "The Water Fund flows with liquidity and adaptability, navigating market currents and seizing time-sensitive opportunities. Structured for speed of deployment, it provides bridge capital, mezzanine solutions, and flexible structures at critical inflection points.",
     focus: ["Bridge Financing", "Mezzanine Capital", "Distressed Opportunities", "Special Situations"],
@@ -57,7 +57,7 @@ export default function FundsFull() {
           transition={{ duration: 0.6 }}
           style={{ color: "#fffef2", opacity: 0.55, fontWeight: 300, fontSize: "0.95rem", lineHeight: 1.75, maxWidth: "640px", marginBottom: "64px" }}
         >
-          Each fund is structured around a distinct investment thesis and elemental identity. Patient, focused capital — applied with expertise — produces superior outcomes over time.
+          Each fund is structured around a distinct investment thesis and elemental identity. Patient, focused capital, applied with expertise, produces superior outcomes over time.
         </motion.p>
 
         {/* Fund cards — 2-col grid */}

@@ -12,7 +12,7 @@ const testimonials = [
     paragraphs: [
       "I am pleased to commend Wahl Citadel for the outstanding partnership we experienced during a crucial phase of our business at Silicon Resources Australia. From the beginning, the Wahl Citadel team demonstrated skillful professionalism, providing strategic insights and transparent communication that greatly contributed to the success of our collaboration.",
       "Their commitment to growth, coupled with their expertise, resulted in tailored solutions to infuse the required capital into our business, making Mark, Jason, Stephen, and James invaluable and trusted partners in our journey.",
-      "I wholeheartedly recommend the Wahl team to any business seeking a capital partner. Their dedication to excellence and genuine interest in our success set them apart — making our experience not only financially rewarding but marked by trust and a shared commitment to long-term success.",
+      "I wholeheartedly recommend the Wahl team to any business seeking a capital partner. Their dedication to excellence and genuine interest in our success set them apart, making our experience not only financially rewarding but marked by trust and a shared commitment to long-term success.",
     ],
   },
   {
@@ -65,23 +65,21 @@ export default function Testimonial() {
     else if (info.offset.x > threshold) goTo(current - 1);
   }, [containerWidth, current, goTo]);
 
-  const t = testimonials[current];
-
   return (
     <section
       ref={sectionRef}
-      style={{ backgroundColor: "#fffef2", padding: "96px 0", overflow: "hidden" }}
+      className="overflow-hidden bg-cream py-24"
     >
-      <div style={{ maxWidth: "1152px", margin: "0 auto", padding: "0 40px" }}>
+      <div className="mx-auto max-w-[1152px] px-5 md:px-10">
 
         {/* Header row */}
-        <div style={{ display: "flex", alignItems: "flex-end", justifyContent: "space-between", marginBottom: "64px", gap: "24px", flexWrap: "wrap" }}>
+        <div className="mb-16 flex flex-wrap items-end justify-between gap-6">
           <div>
             <motion.p
               initial={{ opacity: 0, y: 10 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5 }}
-              style={{ color: "#fcb835", fontSize: "0.75rem", fontWeight: 500, letterSpacing: "0.12em", textTransform: "uppercase", marginBottom: "12px" }}
+              className="mb-3 text-xs font-medium uppercase tracking-[0.12em] text-gold"
             >
               Partner reviews
             </motion.p>
@@ -89,7 +87,8 @@ export default function Testimonial() {
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.7, delay: 0.08 }}
-              style={{ fontFamily: "var(--font-season)", fontSize: "clamp(1.8rem, 3.5vw, 44px)", color: "#292929", lineHeight: 1.1, letterSpacing: "-0.01em", margin: 0 }}
+              className="m-0 font-season leading-[1.1] tracking-[-0.01em] text-dark"
+              style={{ fontSize: "clamp(1.8rem, 3.5vw, 44px)" }}
             >
               What our partners say
             </motion.h2>
@@ -100,7 +99,7 @@ export default function Testimonial() {
             initial={{ opacity: 0 }}
             animate={inView ? { opacity: 1 } : {}}
             transition={{ duration: 0.5, delay: 0.3 }}
-            style={{ display: "flex", alignItems: "center", gap: "8px" }}
+            className="flex items-center gap-2"
           >
             {testimonials.map((_, i) => (
               <button
@@ -108,15 +107,10 @@ export default function Testimonial() {
                 key={i}
                 onClick={() => goTo(i)}
                 aria-label={`Go to review ${i + 1}`}
+                className="h-2 cursor-pointer rounded-full border-none p-0 transition-all duration-300 ease-in-out"
                 style={{
                   width: i === current ? "24px" : "8px",
-                  height: "8px",
-                  borderRadius: "40px",
                   backgroundColor: i === current ? "#292929" : "rgba(41,41,41,0.2)",
-                  border: "none",
-                  padding: 0,
-                  cursor: "pointer",
-                  transition: "all 0.3s ease",
                 }}
               />
             ))}
@@ -129,7 +123,7 @@ export default function Testimonial() {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7, delay: 0.2 }}
           ref={trackContainerRef}
-          style={{ overflow: "hidden", cursor: "grab" }}
+          className="cursor-grab overflow-hidden"
         >
           <motion.div
             drag="x"
@@ -142,52 +136,43 @@ export default function Testimonial() {
             animate={{ x: -current * containerWidth }}
             transition={{ type: "spring", stiffness: 350, damping: 38 }}
             whileTap={{ cursor: "grabbing" }}
+            className="flex will-change-transform"
             style={{
-              display: "flex",
               width: containerWidth ? `${count * containerWidth}px` : "100%",
-              willChange: "transform",
             }}
           >
             {testimonials.map((slide, i) => (
               <div
                 key={i}
+                className="shrink-0 select-none"
                 style={{
                   width: containerWidth ? `${containerWidth}px` : "100%",
-                  flexShrink: 0,
-                  userSelect: "none",
                 }}
               >
                 {slide.placeholder ? (
                   /* Placeholder slide */
-                  <div style={{
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    minHeight: "280px",
-                    border: "1px dashed rgba(41,41,41,0.15)",
-                    borderRadius: "12px",
-                  }}>
-                    <div style={{ textAlign: "center" }}>
-                      <div style={{ width: "32px", height: "1px", backgroundColor: "rgba(41,41,41,0.15)", margin: "0 auto 16px" }} />
-                      <p style={{ color: "#292929", opacity: 0.25, fontSize: "0.85rem", fontWeight: 300 }}>
-                        {slide.fund} — Review coming soon
+                  <div className="flex min-h-[280px] items-center justify-center rounded-xl border border-dashed border-dark/15">
+                    <div className="text-center">
+                      <div className="mx-auto mb-4 h-px w-8 bg-dark/15" />
+                      <p className="text-[0.85rem] font-light text-dark opacity-25">
+                        Review coming soon
                       </p>
                     </div>
                   </div>
                 ) : (
                   /* Real review slide */
-                  <div className="grid-split" style={{ alignItems: "start" }}>
+                  <div className="grid-split items-start">
                     {/* Attribution */}
                     <div>
-                      <p style={{ fontFamily: "var(--font-season)", fontSize: "1.05rem", color: "#292929", marginBottom: "4px", fontWeight: 400 }}>
+                      <p className="mb-1 font-season text-[1.05rem] font-normal text-dark">
                         {slide.name}
                       </p>
                       {slide.role && (
-                        <p style={{ color: "#292929", opacity: 0.5, fontSize: "0.8rem", fontWeight: 300, marginBottom: "2px", margin: "0 0 2px 0" }}>
+                        <p className="m-0 mb-0.5 text-[0.8rem] font-light text-dark opacity-50">
                           {slide.role}
                         </p>
                       )}
-                      <p style={{ color: "#292929", opacity: 0.35, fontSize: "0.8rem", fontWeight: 300, margin: 0 }}>
+                      <p className="m-0 text-[0.8rem] font-light text-dark opacity-35">
                         {slide.company}
                       </p>
                     </div>
@@ -195,20 +180,11 @@ export default function Testimonial() {
                     {/* Quote */}
                     <div>
                       {slide.paragraphs.map((para, j) => (
-                        <p key={j} style={{
-                          color: "#292929", opacity: 0.75, fontWeight: 300,
-                          fontSize: "1rem", lineHeight: 1.8,
-                          margin: j > 0 ? "18px 0 0 0" : "0",
-                        }}>
+                        <p key={j} className={`text-base font-light leading-[1.8] text-dark opacity-75 ${j > 0 ? "mt-[18px]" : "m-0"}`}>
                           {j === 0 && (
-                            <span style={{
-                              fontFamily: "var(--font-season)",
-                              fontSize: "1.4rem",
-                              color: "#fcb835",
-                              lineHeight: 1,
-                              marginRight: "2px",
-                              verticalAlign: "baseline",
-                            }}>&ldquo;</span>
+                            <span className="mr-0.5 align-baseline font-season text-[1.4rem] leading-none text-gold">
+                              &ldquo;
+                            </span>
                           )}
                           {para}
                         </p>
@@ -222,7 +198,7 @@ export default function Testimonial() {
         </motion.div>
 
         {/* Prev / Next arrows */}
-        <div style={{ display: "flex", gap: "12px", marginTop: "48px" }}>
+        <div className="mt-12 flex gap-3">
           {[
             { dir: -1, icon: "arrow_back" },
             { dir:  1, icon: "arrow_forward" },

@@ -11,7 +11,7 @@ const quote = {
   paragraphs: [
     "I am pleased to commend Wahl Citadel for the outstanding partnership we experienced during a crucial phase of our business at Silicon Resources Australia. From the beginning, the Wahl Citadel team demonstrated skillful professionalism, providing strategic insights and transparent communication that greatly contributed to the success of our collaboration.",
     "Their commitment to growth, coupled with their expertise, resulted in tailored solutions to infuse the required capital into our business, making Mark, Jason, Stephen, and James invaluable and trusted partners in our journey.",
-    "I wholeheartedly recommend the Wahl team to any business seeking a capital partner for a strategic alliance in growth. Their dedication to excellence and genuine interest in our success set them apart — making our experience not only financially rewarding but marked by trust, collaboration, and a shared commitment to long-term success.",
+    "I wholeheartedly recommend the Wahl team to any business seeking a capital partner for a strategic alliance in growth. Their dedication to excellence and genuine interest in our success set them apart, making our experience not only financially rewarding but marked by trust, collaboration, and a shared commitment to long-term success.",
   ],
 };
 
@@ -33,8 +33,8 @@ export default function ReviewsFull() {
   return (
     <>
       {/* Featured testimonial */}
-      <section ref={ref} style={{ backgroundColor: "#fffef2", padding: "96px 0" }}>
-        <div style={{ maxWidth: "1152px", margin: "0 auto", padding: "0 40px" }}>
+      <section ref={ref} className="bg-cream py-28">
+        <div className="mx-auto max-w-[1152px] px-5 md:px-10">
           <motion.div
             className="grid-split"
             initial={{ opacity: 0, y: 30 }}
@@ -43,40 +43,24 @@ export default function ReviewsFull() {
           >
             {/* Left: attribution */}
             <div>
-              <div style={{
-                display: "inline-block",
-                border: "1px solid rgba(41,41,41,0.2)",
-                borderRadius: "40px",
-                padding: "4px 14px",
-                fontSize: "0.7rem",
-                fontWeight: 500,
-                color: "#292929",
-                marginBottom: "28px",
-              }}>
-                {quote.fund}
-              </div>
-              <p style={{ fontFamily: "var(--font-season)", fontSize: "1.1rem", color: "#292929", marginBottom: "4px", fontWeight: 400 }}>
+              <p className="mb-1 font-season text-[1.1rem] font-normal text-dark">
                 {quote.name}
               </p>
-              <p style={{ color: "#292929", opacity: 0.55, fontSize: "0.8rem", fontWeight: 300, marginBottom: "2px" }}>
+              <p className="mb-0.5 text-[0.8rem] font-light text-dark opacity-55">
                 {quote.role}
               </p>
-              <p style={{ color: "#292929", opacity: 0.4, fontSize: "0.8rem", fontWeight: 300, margin: 0 }}>
+              <p className="m-0 text-[0.8rem] font-light text-dark opacity-40">
                 {quote.company}
               </p>
             </div>
 
             {/* Right: quote */}
             <div>
-              <div style={{ fontFamily: "var(--font-season)", fontSize: "5rem", color: "#fcb835", lineHeight: 0.8, marginBottom: "20px" }}>
+              <div className="mb-5 font-season text-[3rem] sm:text-[4rem] md:text-[5rem] leading-[0.8] text-gold">
                 &ldquo;
               </div>
               {quote.paragraphs.map((para, i) => (
-                <p key={i} style={{
-                  color: "#292929", opacity: 0.75, fontWeight: 300,
-                  fontSize: "1rem", lineHeight: 1.8,
-                  margin: i > 0 ? "18px 0 0 0" : "0",
-                }}>
+                <p key={i} className={`text-base font-light leading-[1.8] text-dark opacity-75 ${i > 0 ? "mt-[18px]" : "m-0"}`}>
                   {para}
                 </p>
               ))}
@@ -86,8 +70,8 @@ export default function ReviewsFull() {
       </section>
 
       {/* Stats strip */}
-      <section ref={statsRef} style={{ backgroundColor: "#292929", padding: "64px 0" }}>
-        <div style={{ maxWidth: "1152px", margin: "0 auto", padding: "0 40px" }}>
+      <section ref={statsRef} className="bg-dark py-16">
+        <div className="mx-auto max-w-[1152px] px-5 md:px-10">
           <div className="grid-stats">
             {stats.map((stat, i) => (
               <motion.div
@@ -95,12 +79,15 @@ export default function ReviewsFull() {
                 initial={{ opacity: 0, y: 16 }}
                 animate={statsInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: i * 0.08 }}
-                style={{ textAlign: "center" }}
+                className="text-center"
               >
-                <p style={{ fontFamily: "var(--font-season)", fontSize: "clamp(2rem, 4vw, 48px)", color: "#fffef2", lineHeight: 1, marginBottom: "8px" }}>
+                <p
+                  className="mb-2 font-season leading-none text-cream"
+                  style={{ fontSize: "clamp(2rem, 4vw, 48px)" }}
+                >
                   {stat.value}
                 </p>
-                <p style={{ color: "#fffef2", opacity: 0.4, fontSize: "0.75rem", fontWeight: 400, letterSpacing: "0.08em", textTransform: "uppercase", margin: 0 }}>
+                <p className="m-0 text-xs font-normal uppercase tracking-[0.08em] text-cream opacity-40">
                   {stat.label}
                 </p>
               </motion.div>
@@ -110,21 +97,24 @@ export default function ReviewsFull() {
       </section>
 
       {/* Closing — partner commitment section */}
-      <section ref={closingRef} style={{ backgroundColor: "#f2f1ec", padding: "96px 0" }}>
-        <div style={{ maxWidth: "1152px", margin: "0 auto", padding: "0 40px" }}>
+      <section ref={closingRef} className="bg-dark py-24">
+        <div className="mx-auto max-w-[1152px] px-5 md:px-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={closingInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7 }}
-            style={{ marginBottom: "64px" }}
+            className="mb-16"
           >
-            <p style={{ color: "#fcb835", fontSize: "0.75rem", fontWeight: 500, letterSpacing: "0.12em", textTransform: "uppercase", marginBottom: "16px" }}>
+            <p className="mb-4 text-xs font-medium uppercase tracking-[0.12em] text-gold">
               Partner experiences
             </p>
-            <h2 style={{ fontFamily: "var(--font-season)", fontSize: "clamp(1.8rem, 3.5vw, 42px)", color: "#292929", lineHeight: 1.1, letterSpacing: "-0.01em", marginBottom: "20px" }}>
+            <h2
+              className="mb-5 font-season leading-[1.1] tracking-[-0.01em] text-cream"
+              style={{ fontSize: "clamp(1.8rem, 3.5vw, 42px)" }}
+            >
               Building lasting partnerships
             </h2>
-            <p style={{ color: "#292929", opacity: 0.6, fontWeight: 300, fontSize: "0.95rem", lineHeight: 1.75, margin: 0, maxWidth: "560px" }}>
+            <p className="m-0 max-w-[560px] text-[0.95rem] font-light leading-[1.75] text-cream/60">
               We measure our success not by returns alone, but by the quality of relationships we build. Every engagement is built on transparency, aligned incentives, and a shared commitment to long-term outcomes.
             </p>
           </motion.div>
@@ -132,19 +122,9 @@ export default function ReviewsFull() {
           {/* Placeholder cards */}
           <div className="investment-grid">
             {[1, 2, 3].map((n) => (
-              <div key={n} style={{
-                backgroundColor: "#fffef2",
-                borderRadius: "12px",
-                padding: "48px 32px",
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-                justifyContent: "center",
-                gap: "16px",
-                minHeight: "180px",
-              }}>
-                <div style={{ width: "32px", height: "1px", backgroundColor: "rgba(41,41,41,0.15)" }} />
-                <p style={{ color: "#292929", opacity: 0.2, fontSize: "0.75rem", fontWeight: 300, textAlign: "center", margin: 0 }}>
+              <div key={n} className="flex min-h-[180px] flex-col items-center justify-center gap-4 rounded-xl border border-cream/10 bg-cream/[0.05] px-8 py-12">
+                <div className="h-px w-8 bg-cream/15" />
+                <p className="m-0 text-center text-xs font-light text-cream/25">
                   Review coming soon
                 </p>
               </div>

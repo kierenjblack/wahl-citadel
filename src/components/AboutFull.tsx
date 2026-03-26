@@ -7,27 +7,27 @@ const pillars = [
   {
     title: "Rare Opportunities Lead to Extraordinary Outcomes",
     description:
-      "We sift through as many opportunities as necessary to secure rare opportunities with asymmetric risk/reward. Well-managed risk enables exceptional returns.",
+      "They agreed to sift through as many opportunities as necessary to secure rare opportunities with asymmetric risk/reward. Well managed risk was to be an essential ingredient to enable the engineering of exceptional returns.",
   },
   {
     title: "Success is Engineered",
     description:
-      "Exceptional returns don't happen by chance; they are the result of strategy, expertise, and relentless execution.",
+      "Exceptional returns don\u2019t happen by chance; they are the result of strategy, expertise and relentless execution.",
   },
   {
-    title: "Smart Risk. Big Rewards.",
+    title: "Smart Risk. Big Rewards. Engineered Success",
     description:
-      "Bold decisions create the greatest wealth. We take calculated risks — reckless risk is prohibited. Precision over speculation, always.",
+      "Our funds were not set up to be just other investments. They were to embrace risk, knowing that bold decisions create the greatest wealth. Risk is to be our friend\u2026 Reckless risk shall not be tolerated.",
   },
   {
     title: "Performance is the Currency of Trust",
     description:
-      "Trust is earned deal-by-deal and return-by-return. Our founding partners invest first and exit last — full alignment from day one.",
+      "Trust was to be a currency, a metric demanding accumulation. It would be earned deal by deal, return by return. A foundation of this was to be alignment\u2026 the first money into any fund is the founding partners\u2026 the last money out is to be the partners. This founding principle has built the most powerful asset of all\u2026 Trust.",
   },
   {
-    title: "Investors' Interests Aligned",
+    title: "Investors\u2019 Interests Aligned",
     description:
-      "Investors' success is Wahl Citadel's success. Our returns are aligned with the returns to our investors and all other stakeholders.",
+      "Investors\u2019 success IS Wahl Citadel\u2019s success. Investors\u2019 returns are aligned with the returns to ourselves and other stakeholders.",
   },
 ];
 
@@ -49,37 +49,42 @@ export default function AboutFull() {
   return (
     <>
       {/* Narrative + pillars */}
-      <section ref={ref} style={{ backgroundColor: "#292929", padding: "80px 0 96px" }}>
-        <div style={{ maxWidth: "1152px", margin: "0 auto", padding: "0 40px" }}>
+      <section ref={ref} className="bg-dark pt-24 pb-24">
+        <div className="mx-auto max-w-[1152px] px-5 md:px-10">
 
           {/* Two-column intro text */}
-          <div className="grid-2col" style={{ marginBottom: "64px" }}>
+          <div className="grid-2col mb-16">
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.7 }}
-              style={{ color: "#fffef2", opacity: 0.75, fontWeight: 300, fontSize: "1rem", lineHeight: 1.8, margin: 0 }}
+              className="m-0 text-base font-light leading-[1.8] text-cream/75"
             >
-              The founders of Wahl Citadel came together to develop and offer a new class of investing. Precision Equity was born — and with it, a set of core principles to guide strategy, ensure capital precision, and transform ambition into wealth.
+              The founders of Wahl Citadel came together to develop and offer a new class of investing. Precision Equity was born. They agreed on principles that would guide strategy, ensure capital meets precision, risk meets reward and ambition transforms into wealth.
             </motion.p>
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.7, delay: 0.12 }}
-              style={{ display: "flex", flexDirection: "column", gap: "20px" }}
+              className="flex flex-col gap-5"
             >
-              <p style={{ color: "#fffef2", opacity: 0.75, fontWeight: 300, fontSize: "1rem", lineHeight: 1.8, margin: 0 }}>
-                Our purpose: turn ambition into wealth by transforming rare opportunities into exceptional returns.
+              <p className="m-0 text-base font-light leading-[1.8] text-cream/75">
+                Our purpose is to turn ambition into wealth, by transforming rare opportunities into exceptional returns.
               </p>
-              <p style={{ color: "#fffef2", opacity: 0.75, fontWeight: 300, fontSize: "1rem", lineHeight: 1.8, margin: 0 }}>
-                Based at Level 30, Rialto Building, we operate from the heart of Melbourne&apos;s financial district — a different way to invest.
+              <p className="m-0 text-base font-light leading-[1.8] text-cream/75">
+                Based at Level 30, Rialto Building, we operate from the heart of Melbourne&apos;s financial district, a different way to invest.
               </p>
             </motion.div>
           </div>
 
           {/* Divider */}
-          <div style={{ height: "1px", backgroundColor: "rgba(255,254,242,0.08)", marginBottom: "56px" }} />
+          <motion.div
+            initial={{ opacity: 0, scaleX: 0 }}
+            animate={inView ? { opacity: 1, scaleX: 1 } : {}}
+            transition={{ duration: 0.8, delay: 0.25 }}
+            className="mb-14 h-px origin-left bg-cream/[0.08]"
+          />
 
           {/* 5 founding principles */}
           <div className="grid-3col">
@@ -89,12 +94,15 @@ export default function AboutFull() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: 0.2 + i * 0.1 }}
+                className="flex h-full flex-col rounded-lg border border-cream/[0.08] bg-cream/[0.04] px-7 py-8"
               >
-                <div style={{ width: "32px", height: "2px", backgroundColor: "#fcb835", marginBottom: "20px" }} />
-                <h3 style={{ fontFamily: "var(--font-season)", fontSize: "1.25rem", color: "#fffef2", marginBottom: "12px", fontWeight: 400 }}>
+                <span className="mb-4 font-[var(--font-public-sans)] text-[0.7rem] font-semibold tracking-[0.1em] text-gold">
+                  0{i + 1}
+                </span>
+                <h3 className="mb-3.5 font-season text-xl font-normal text-cream">
                   {p.title}
                 </h3>
-                <p style={{ color: "#fffef2", opacity: 0.6, fontWeight: 300, fontSize: "0.875rem", lineHeight: 1.7, margin: 0 }}>
+                <p className="m-0 text-sm font-light leading-[1.7] text-cream/60">
                   {p.description}
                 </p>
               </motion.div>
@@ -104,8 +112,8 @@ export default function AboutFull() {
       </section>
 
       {/* Stats strip */}
-      <section ref={statsRef} style={{ backgroundColor: "#fcb835", padding: "64px 0" }}>
-        <div style={{ maxWidth: "1152px", margin: "0 auto", padding: "0 40px" }}>
+      <section ref={statsRef} className="bg-gold py-16">
+        <div className="mx-auto max-w-[1152px] px-5 md:px-10">
           <div className="grid-stats">
             {stats.map((stat, i) => (
               <motion.div
@@ -113,12 +121,12 @@ export default function AboutFull() {
                 initial={{ opacity: 0, y: 16 }}
                 animate={statsInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: i * 0.08 }}
-                style={{ textAlign: "center" }}
+                className="text-center"
               >
-                <p style={{ fontFamily: "var(--font-season)", fontSize: "clamp(2rem, 4vw, 48px)", color: "#292929", lineHeight: 1, marginBottom: "8px" }}>
+                <p className="mb-2 font-season text-[clamp(2rem,4vw,48px)] leading-none text-dark">
                   {stat.value}
                 </p>
-                <p style={{ color: "#292929", opacity: 0.65, fontSize: "0.75rem", fontWeight: 400, letterSpacing: "0.08em", textTransform: "uppercase", margin: 0 }}>
+                <p className="m-0 text-xs font-normal uppercase tracking-[0.08em] text-dark/65">
                   {stat.label}
                 </p>
               </motion.div>
@@ -128,27 +136,52 @@ export default function AboutFull() {
       </section>
 
       {/* Philosophy */}
-      <section ref={philRef} style={{ backgroundColor: "#fffef2", padding: "96px 0" }}>
-        <div style={{ maxWidth: "1152px", margin: "0 auto", padding: "0 40px" }}>
-            <motion.div
+      <section ref={philRef} className="bg-cream py-28">
+        <div className="mx-auto max-w-[1152px] px-5 md:px-10">
+          <motion.p
+            initial={{ opacity: 0, y: 24 }}
+            animate={philInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="mb-4 text-xs font-medium uppercase tracking-[0.12em] text-gold"
+          >
+            Our philosophy
+          </motion.p>
+          <motion.h2
+            initial={{ opacity: 0, y: 28 }}
+            animate={philInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.7, delay: 0.2 }}
+            className="mb-7 font-season text-[clamp(1.8rem,3.5vw,42px)] leading-[1.1] tracking-tight text-dark"
+          >
+            Precision Equity, a new class of investing.
+          </motion.h2>
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            animate={philInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.7, delay: 0.32 }}
+            className="flex max-w-[640px] flex-col gap-5"
+          >
+            <p className="m-0 text-base font-light leading-[1.75] text-dark/75">
+              Welcome to Precision Equity, a new class of investing. Smart risk. Big rewards. A different way to invest!
+            </p>
+          </motion.div>
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={philInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.7 }}
+            transition={{ duration: 0.6, delay: 0.45 }}
+            className="mt-9 flex flex-wrap gap-4"
           >
-            <p style={{ color: "#fcb835", fontSize: "0.75rem", fontWeight: 500, letterSpacing: "0.12em", textTransform: "uppercase", marginBottom: "16px" }}>
-              Our philosophy
-            </p>
-            <h2 style={{ fontFamily: "var(--font-season)", fontSize: "clamp(1.8rem, 3.5vw, 42px)", color: "#292929", lineHeight: 1.1, letterSpacing: "-0.01em", marginBottom: "28px" }}>
-              Precision Equity — a new class of investing.
-            </h2>
-            <div style={{ display: "flex", flexDirection: "column", gap: "20px", maxWidth: "640px" }}>
-              <p style={{ color: "#292929", opacity: 0.75, fontWeight: 300, fontSize: "1rem", lineHeight: 1.75, margin: 0 }}>
-                Smart risk. Big rewards. A different way to invest. Welcome to Precision Equity — where we transform rare opportunities into exceptional returns through strategy, expertise, and relentless execution.
-              </p>
-              <p style={{ color: "#292929", opacity: 0.75, fontWeight: 300, fontSize: "1rem", lineHeight: 1.75, margin: 0 }}>
-                Whether you are looking to invest or seeking growth capital, Wahl Citadel brings the alignment, discipline, and network to make it happen.
-              </p>
-            </div>
+            <a
+              href="/contact"
+              className="inline-block rounded-sm bg-gold px-8 py-3.5 text-sm font-medium tracking-[0.04em] text-dark no-underline"
+            >
+              Looking to Invest?
+            </a>
+            <a
+              href="/contact"
+              className="inline-block rounded-sm border border-dark/20 bg-transparent px-8 py-3.5 text-sm font-medium tracking-[0.04em] text-dark no-underline"
+            >
+              Looking for Capital?
+            </a>
           </motion.div>
         </div>
       </section>

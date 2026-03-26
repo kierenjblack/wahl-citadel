@@ -9,11 +9,11 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <main>
+    <main className="">
       <PageHero
         eyebrow="Get in Touch"
         heading="Start the Conversation"
-        subtext="Whether you are a founder seeking capital, an investor exploring our funds, or a business executive looking to partner — we would like to hear from you. Our team responds to all enquiries promptly."
+        subtext="Whether you are a founder seeking capital, an investor exploring our funds, or a business executive looking to partner, we would like to hear from you. Our team responds to all enquiries promptly."
       />
       <Contact />
     </main>

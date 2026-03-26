@@ -40,7 +40,7 @@ const team: TeamMember[] = [
     title: "Co-founder",
     discipline: "Corporate Law & Structuring",
     photo: "/images/james-dickson.jpg",
-    bio: "James is the legal cornerstone of Wahl Citadel. His expertise in corporate structuring and governance means every investment is engineered correctly from day one — protecting investors and aligning incentives.",
+    bio: "James is the legal cornerstone of Wahl Citadel. His expertise in corporate structuring and governance means every investment is engineered correctly from day one -- protecting investors and aligning incentives.",
     points: [
       "Skilled in negotiating complex transactions",
       "Ensures successful completion of deals",
@@ -56,7 +56,7 @@ const team: TeamMember[] = [
     photo: "/images/mark-pitcher.png",
     bio: "Mark is an accomplished executive with leadership across high-tech industrials, software, retail, and health and care. As Executive Chair of Clevertar, he brings a founder-operator perspective to every investment.",
     points: [
-      "Executive Chair of Clevertar — AI-led aged care tech",
+      "Executive Chair of Clevertar -- AI-led aged care tech",
       "Broad leadership across multiple industries",
       "Experience in high-tech industrials and healthcare",
       "Deep expertise in board governance",
@@ -91,8 +91,8 @@ export default function TeamFull() {
   return (
     <>
       {/* Team cards */}
-      <section ref={ref} style={{ backgroundColor: "#f2f1ec", padding: "80px 0 96px" }}>
-        <div style={{ maxWidth: "1152px", margin: "0 auto", padding: "0 40px" }}>
+      <section ref={ref} className="bg-cream-secondary pt-24 pb-24">
+        <div className="mx-auto max-w-[1152px] px-5 md:px-10">
           <div className="grid-2col">
             {team.map((member, i) => (
               <motion.div
@@ -100,51 +100,51 @@ export default function TeamFull() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: 0.1 + i * 0.1 }}
-                style={{ transformStyle: "preserve-3d" }}
+                className="[transform-style:preserve-3d]"
               >
                 <div
-                  className={`team-card-wrap${flipped[i] ? " flipped" : ""}`}
-                  style={{ aspectRatio: "3 / 4" }}
+                  className={`team-card-wrap${flipped[i] ? " flipped" : ""} aspect-[3/4]`}
                   onClick={() => toggleFlip(i)}
                 >
                 <div className="team-card-inner">
 
-                  {/* Front — photo only */}
+                  {/* Front -- photo only */}
                   <div className="team-card-front">
                     <Image
                       src={member.photo}
                       alt={member.name}
                       fill
-                      style={{ objectFit: "cover", objectPosition: member.objectPosition ?? "top center", filter: "grayscale(100%)", transform: member.photoScale ? `scale(${member.photoScale})` : undefined }}
+                      className="object-cover grayscale"
+                      style={{ objectPosition: member.objectPosition ?? "top center", transform: member.photoScale ? `scale(${member.photoScale})` : undefined }}
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                     />
                     <div className="team-card-hint">
-                      <span className="icon" style={{ fontSize: "14px" }}>touch_app</span>
+                      <span className="icon text-sm">touch_app</span>
                       Tap to learn more
                     </div>
                   </div>
 
-                  {/* Back — bio details */}
+                  {/* Back -- bio details */}
                   <div className="team-card-back">
-                    <p style={{ color: "#fcb835", fontSize: "0.62rem", fontWeight: 600, letterSpacing: "0.12em", textTransform: "uppercase", marginBottom: "10px" }}>
+                    <p className="text-gold text-[0.62rem] font-semibold tracking-[0.12em] uppercase mb-2.5">
                       {member.discipline}
                     </p>
-                    <p style={{ fontFamily: "var(--font-season)", fontSize: "1.1rem", color: "#292929", marginBottom: "2px", fontWeight: 400 }}>
+                    <p className="font-season text-[1.1rem] text-dark mb-0.5 font-normal">
                       {member.name}
                     </p>
-                    <p style={{ color: "#292929", opacity: 0.4, fontSize: "0.75rem", fontWeight: 300, marginBottom: "14px" }}>
+                    <p className="text-dark/40 text-xs font-light mb-3.5">
                       {member.title}
                     </p>
 
-                    <p style={{ color: "#292929", opacity: 0.6, fontSize: "0.78rem", fontWeight: 300, lineHeight: 1.65, marginBottom: "14px" }}>
+                    <p className="text-dark/60 text-[0.78rem] font-light leading-[1.65] mb-3.5">
                       {member.bio}
                     </p>
 
-                    <ul style={{ listStyle: "none", padding: 0, margin: "0 0 auto 0", display: "flex", flexDirection: "column", gap: "7px" }}>
+                    <ul className="list-none p-0 mt-0 mx-0 mb-auto flex flex-col gap-[7px]">
                       {member.points.map((point, j) => (
-                        <li key={j} style={{ display: "flex", gap: "8px", alignItems: "flex-start" }}>
-                          <span style={{ width: "4px", height: "4px", borderRadius: "50%", backgroundColor: "#fcb835", flexShrink: 0, marginTop: "7px" }} />
-                          <span style={{ color: "#292929", opacity: 0.6, fontSize: "0.75rem", fontWeight: 300, lineHeight: 1.5 }}>
+                        <li key={j} className="flex gap-2 items-start">
+                          <span className="size-1 rounded-full bg-gold shrink-0 mt-[7px]" />
+                          <span className="text-dark/60 text-xs font-light leading-normal">
                             {point}
                           </span>
                         </li>
@@ -155,7 +155,7 @@ export default function TeamFull() {
                       href={member.linkedin}
                       target="_blank"
                       rel="noopener noreferrer"
-                      style={{ display: "flex", alignItems: "center", gap: "6px", color: "#292929", fontSize: "0.75rem", fontWeight: 500, textDecoration: "none", opacity: 0.6, marginTop: "16px" }}
+                      className="flex items-center gap-1.5 text-dark text-xs font-medium no-underline opacity-60 mt-4"
                     >
                       <LinkedInIcon />
                       LinkedIn
@@ -171,23 +171,23 @@ export default function TeamFull() {
       </section>
 
       {/* Four disciplines */}
-      <section ref={disciplineRef} style={{ backgroundColor: "#292929", padding: "96px 0" }}>
-        <div style={{ maxWidth: "1152px", margin: "0 auto", padding: "0 40px" }}>
+      <section ref={disciplineRef} className="bg-dark py-24">
+        <div className="mx-auto max-w-[1152px] px-5 md:px-10">
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={disciplineInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7 }}
-            style={{ marginBottom: "56px" }}
+            className="mb-14"
           >
-            <p style={{ color: "#fcb835", fontSize: "0.75rem", fontWeight: 500, letterSpacing: "0.12em", textTransform: "uppercase", marginBottom: "16px" }}>
+            <p className="text-gold text-xs font-medium tracking-[0.12em] uppercase mb-4">
               Our disciplines
             </p>
-            <h2 style={{ fontFamily: "var(--font-season)", fontSize: "clamp(1.8rem, 3.5vw, 42px)", color: "#fffef2", lineHeight: 1.1, letterSpacing: "-0.01em", marginBottom: "20px" }}>
+            <h2 className="font-season text-[clamp(1.8rem,3.5vw,42px)] text-cream leading-[1.1] tracking-[-0.01em] mb-5">
               Four disciplines. One firm.
             </h2>
-            <p style={{ color: "#fffef2", opacity: 0.55, fontWeight: 300, fontSize: "0.95rem", lineHeight: 1.75, margin: 0, maxWidth: "560px" }}>
-              Wahl Citadel&apos;s co-founding team is built deliberately — covering every phase of the investment lifecycle in-house, without external advisors replacing internal conviction.
+            <p className="text-cream/55 font-light text-[0.95rem] leading-[1.75] m-0 max-w-[560px]">
+              Wahl Citadel&apos;s co-founding team is built deliberately, covering every phase of the investment lifecycle in-house, without external advisors replacing internal conviction.
             </p>
           </motion.div>
 
@@ -198,17 +198,13 @@ export default function TeamFull() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={disciplineInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: 0.2 + i * 0.08 }}
-                style={{
-                  padding: "40px 32px 40px 0",
-                  borderLeft: i > 0 ? "1px solid rgba(255,254,242,0.08)" : "none",
-                  paddingLeft: i > 0 ? "32px" : "0",
-                }}
+                className={`pt-10 pr-8 pb-10 ${i > 0 ? "border-l border-cream/8 pl-8" : "pl-0"}`}
               >
-                <div style={{ height: "2px", width: "28px", backgroundColor: "#fcb835", marginBottom: "20px" }} />
-                <h3 style={{ fontFamily: "var(--font-season)", fontSize: "1.05rem", color: "#fffef2", fontWeight: 400, marginBottom: "10px" }}>
+                <div className="h-0.5 w-7 bg-gold mb-5" />
+                <h3 className="font-season text-[1.05rem] text-cream font-normal mb-2.5">
                   {d.label}
                 </h3>
-                <p style={{ color: "#fffef2", opacity: 0.45, fontSize: "0.82rem", fontWeight: 300, lineHeight: 1.65, margin: 0 }}>
+                <p className="text-cream/45 text-[0.82rem] font-light leading-[1.65] m-0">
                   {d.desc}
                 </p>
               </motion.div>
